@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreTest", "NetCoreTest\NetCoreTest.csproj", "{6EEA531E-EE70-4F33-B8E4-6819A08CC797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreTest", "NetCoreTest\NetCoreTest.csproj", "{6EEA531E-EE70-4F33-B8E4-6819A08CC797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreMvc", "NetCoreMvc\NetCoreMvc.csproj", "{0BB6B0B6-7E3D-496F-94E4-A9C26EE053AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreLibrary", "NetCoreLibrary\NetCoreLibrary.csproj", "{7BA6DE9D-8C15-4037-8CE1-B02646E9C42D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6EEA531E-EE70-4F33-B8E4-6819A08CC797}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EEA531E-EE70-4F33-B8E4-6819A08CC797}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EEA531E-EE70-4F33-B8E4-6819A08CC797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB6B0B6-7E3D-496F-94E4-A9C26EE053AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB6B0B6-7E3D-496F-94E4-A9C26EE053AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB6B0B6-7E3D-496F-94E4-A9C26EE053AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB6B0B6-7E3D-496F-94E4-A9C26EE053AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BA6DE9D-8C15-4037-8CE1-B02646E9C42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA6DE9D-8C15-4037-8CE1-B02646E9C42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA6DE9D-8C15-4037-8CE1-B02646E9C42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA6DE9D-8C15-4037-8CE1-B02646E9C42D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
