@@ -1,0 +1,162 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Admin\**" />
+    <Compile Remove="Events\**" />
+    <Compile Remove="File\**" />
+    <Compile Remove="FootPrintImg\**" />
+    <Compile Remove="FootPrint\**" />
+    <Compile Remove="InstitudeOfGrowth\**" />
+    <Compile Remove="Message\**" />
+    <Compile Remove="Mobile\**" />
+    <Compile Remove="Pay\**" />
+    <Compile Remove="Project\**" />
+    <Compile Remove="Push\**" />
+    <Compile Remove="Relation\**" />
+    <Compile Remove="Statistics\**" />
+    <Compile Remove="Tag\**" />
+    <Compile Remove="Tourist\**" />
+    <Compile Remove="Trade\**" />
+    <Compile Remove="User\**" />
+    <Compile Remove="Weixin\**" />
+    <EmbeddedResource Remove="Admin\**" />
+    <EmbeddedResource Remove="Events\**" />
+    <EmbeddedResource Remove="File\**" />
+    <EmbeddedResource Remove="FootPrintImg\**" />
+    <EmbeddedResource Remove="FootPrint\**" />
+    <EmbeddedResource Remove="InstitudeOfGrowth\**" />
+    <EmbeddedResource Remove="Message\**" />
+    <EmbeddedResource Remove="Mobile\**" />
+    <EmbeddedResource Remove="Pay\**" />
+    <EmbeddedResource Remove="Project\**" />
+    <EmbeddedResource Remove="Push\**" />
+    <EmbeddedResource Remove="Relation\**" />
+    <EmbeddedResource Remove="Statistics\**" />
+    <EmbeddedResource Remove="Tag\**" />
+    <EmbeddedResource Remove="Tourist\**" />
+    <EmbeddedResource Remove="Trade\**" />
+    <EmbeddedResource Remove="User\**" />
+    <EmbeddedResource Remove="Weixin\**" />
+    <None Remove="Admin\**" />
+    <None Remove="Events\**" />
+    <None Remove="File\**" />
+    <None Remove="FootPrintImg\**" />
+    <None Remove="FootPrint\**" />
+    <None Remove="InstitudeOfGrowth\**" />
+    <None Remove="Message\**" />
+    <None Remove="Mobile\**" />
+    <None Remove="Pay\**" />
+    <None Remove="Project\**" />
+    <None Remove="Push\**" />
+    <None Remove="Relation\**" />
+    <None Remove="Statistics\**" />
+    <None Remove="Tag\**" />
+    <None Remove="Tourist\**" />
+    <None Remove="Trade\**" />
+    <None Remove="User\**" />
+    <None Remove="Weixin\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Class1.cs" />
+    <Compile Remove="Data\AddressBookMobile.cs" />
+    <Compile Remove="Data\AssociatedProjRecord.cs" />
+    <Compile Remove="Data\AttentionStatistics.cs" />
+    <Compile Remove="Data\CallRecord.cs" />
+    <Compile Remove="Data\Class.cs" />
+    <Compile Remove="Data\ClassStuRelation.cs" />
+    <Compile Remove="Data\DockedRecord.cs" />
+    <Compile Remove="Data\DockedStatistics.cs" />
+    <Compile Remove="Data\FootChatContextParttial.cs" />
+    <Compile Remove="Data\FootPrint.cs" />
+    <Compile Remove="Data\FootPrintImg.cs" />
+    <Compile Remove="Data\FootPrintStatistics.cs" />
+    <Compile Remove="Data\FootPrintTag.cs" />
+    <Compile Remove="Data\FootUser.cs" />
+    <Compile Remove="Data\ImportFootPrintRecord.cs" />
+    <Compile Remove="Data\ImportUserRecord.cs" />
+    <Compile Remove="Data\InstitudeOfGrowthTrade.cs" />
+    <Compile Remove="Data\InteractionStatistics.cs" />
+    <Compile Remove="Data\MobileInfo.cs" />
+    <Compile Remove="Data\Movies.cs" />
+    <Compile Remove="Data\Relation.cs" />
+    <Compile Remove="Data\Student.cs" />
+    <Compile Remove="Data\SuggestFeedback.cs" />
+    <Compile Remove="Data\TagSource.cs" />
+    <Compile Remove="Data\Tickts.cs" />
+    <Compile Remove="Data\TouristViewFootPrintRecord.cs" />
+    <Compile Remove="Data\Trade.cs" />
+    <Compile Remove="Data\UserBrand.cs" />
+    <Compile Remove="Data\UserBusinessArea.cs" />
+    <Compile Remove="Data\UserComplain.cs" />
+    <Compile Remove="Data\UserFavorite.cs" />
+    <Compile Remove="Data\UserLoginRecord.cs" />
+    <Compile Remove="Data\UserProduct.cs" />
+    <Compile Remove="Data\UserServiceState.cs" />
+    <Compile Remove="Data\UserServiceStateUpdateRecord.cs" />
+    <Compile Remove="Data\UserSetting.cs" />
+    <Compile Remove="Data\UserStatistics.cs" />
+    <Compile Remove="Data\UserViewFootPrintRecord.cs" />
+    <Compile Remove="Data\UserViewProjFootListRecord.cs" />
+    <Compile Remove="Data\UserViewProjRecord.cs" />
+    <Compile Remove="Models\UserFaceUrls.cs" />
+    <Compile Remove="SqlFormatUtility.cs" />
+    <Compile Remove="TagSourceManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="FootPrint\FootPrintManager.cs" />
+    <Compile Include="FootPrint\FootPrintService.cs" />
+    <Compile Include="FootPrint\IFootPrintStrategy.cs" />
+    <Compile Include="FootPrint\ImportFootPrintManager.cs" />
+    <Compile Include="FootPrint\SearchFootPrintArgs.cs" />
+    <Compile Include="FootPrint\UserFootPrintManager.cs" />
+    <Compile Include="InstitudeOfGrowth\StudentStatus.cs" />
+    <Compile Include="User\FootPrintUserDisplayStrategy.cs" />
+    <Compile Include="User\IUserDisplayStrategy.cs" />
+    <Compile Include="User\ServiceStateService.cs" />
+    <Compile Include="User\UserComplainManager.cs" />
+    <Compile Include="User\UserManager.cs" />
+    <Compile Include="User\UserPermissionRelation.cs" />
+    <Compile Include="User\UserProductManager.cs" />
+    <Compile Include="User\UserProjectRelationManager.cs" />
+    <Compile Include="User\UserService.cs" />
+    <Compile Include="User\UserServiceStateManager.cs" />
+    <Compile Include="User\UserSettingManager.cs" />
+    <Compile Include="User\VerifyState.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tgent.Core.Api\Tgent.Core.Api.csproj" />
+    <ProjectReference Include="..\Tgnet.Core.ServiceModel\Tgnet.Core.ServiceModel.csproj" />
+    <ProjectReference Include="..\Tgnet.Data.Entity.Core\Tgnet.Data.Entity.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

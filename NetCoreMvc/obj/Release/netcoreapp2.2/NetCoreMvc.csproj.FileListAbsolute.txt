@@ -28,3 +28,6 @@ E:\测试项目\NetCoreTest\NetCoreMvc\obj\Release\netcoreapp2.2\NetCoreMvc.View
 E:\测试项目\NetCoreTest\NetCoreMvc\obj\Release\netcoreapp2.2\NetCoreMvc.dll
 E:\测试项目\NetCoreTest\NetCoreMvc\obj\Release\netcoreapp2.2\NetCoreMvc.pdb
 E:\测试项目\NetCoreTest\NetCoreMvc\obj\Release\netcoreapp2.2\NetCoreMvc.csproj.CopyComplete
+E:\测试项目\NetCoreTest\NetCoreMvc\bin\Release\netcoreapp2.2\NetCoreLibrary.dll
+E:\测试项目\NetCoreTest\NetCoreMvc\bin\Release\netcoreapp2.2\NetCoreLibrary.pdb
+E:\测试项目\NetCoreTest\NetCoreMvc\obj\Release\netcoreapp2.2\Razor\Views\Movie\Index.g.cshtml.cs

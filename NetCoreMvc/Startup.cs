@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NetCore.Commen;
 
 namespace NetCoreMvc
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+           ConfigurationManager.Init(env);
+            Configuration = ConfigurationManager.Configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -24,6 +27,13 @@ namespace NetCoreMvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var sqlConnection = Configuration.GetConnectionString("SqlServerConnection");
+            var footSql = "Server=.;Database=FootChat;User ID=sa;Password=123456;";
+            services.AddDbContext<NetCoreLibrary.Data.TestCoreDBContext>(options => options.UseSqlServer(sqlConnection));
+            //services.AddDbContext<Tgnet.FootChat.Data.FootChatContext>(options => options.UseSqlServer(footSql));
+            //Tgnet.FootChat.Injects.DataScoped.BindDataInject(services);
+            services.AddMvc(); 
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -70,6 +80,8 @@ namespace NetCoreMvc
                     );
 
             });
+            Tgnet.Core.Log.LoggerResolver.Current.SetLogger(new Tgnet.Core.Log.LocalLogger());
+            
         }
     }
 }

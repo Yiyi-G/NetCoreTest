@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using NetCore.Commen;
 using NetCoreMvc.Models;
 
 namespace NetCoreMvc.Controllers
@@ -13,7 +15,9 @@ namespace NetCoreMvc.Controllers
     {
         public IActionResult Index()
         {
+           var serviceName = ConfigurationManager.Configuration["Log:ServiceName"];
             ViewBag.Titile = "my Home Index";
+            ViewBag.serviceName = serviceName;
             return View();
         }
 

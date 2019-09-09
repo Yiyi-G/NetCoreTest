@@ -1,0 +1,11 @@
+E:\测试项目\NetCoreTest\NetCoreLibrary\bin\Release\netcoreapp2.2\NetCoreLibrary.deps.json
+E:\测试项目\NetCoreTest\NetCoreLibrary\bin\Release\netcoreapp2.2\NetCoreLibrary.runtimeconfig.json
+E:\测试项目\NetCoreTest\NetCoreLibrary\bin\Release\netcoreapp2.2\NetCoreLibrary.runtimeconfig.dev.json
+E:\测试项目\NetCoreTest\NetCoreLibrary\bin\Release\netcoreapp2.2\NetCoreLibrary.dll
+E:\测试项目\NetCoreTest\NetCoreLibrary\bin\Release\netcoreapp2.2\NetCoreLibrary.pdb
+E:\测试项目\NetCoreTest\NetCoreLibrary\obj\Release\netcoreapp2.2\NetCoreLibrary.csprojAssemblyReference.cache
+E:\测试项目\NetCoreTest\NetCoreLibrary\obj\Release\netcoreapp2.2\NetCoreLibrary.csproj.CoreCompileInputs.cache
+E:\测试项目\NetCoreTest\NetCoreLibrary\obj\Release\netcoreapp2.2\NetCoreLibrary.AssemblyInfoInputs.cache
+E:\测试项目\NetCoreTest\NetCoreLibrary\obj\Release\netcoreapp2.2\NetCoreLibrary.AssemblyInfo.cs
+E:\测试项目\NetCoreTest\NetCoreLibrary\obj\Release\netcoreapp2.2\NetCoreLibrary.dll
+E:\测试项目\NetCoreTest\NetCoreLibrary\obj\Release\netcoreapp2.2\NetCoreLibrary.pdb

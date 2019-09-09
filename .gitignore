@@ -3,3 +3,5 @@
 ################################################################################
 
 /NetCore.Commen/bin/Debug/netcoreapp2.2
+/NetCore.Commen/obj
+/NetCoreLibrary/bin

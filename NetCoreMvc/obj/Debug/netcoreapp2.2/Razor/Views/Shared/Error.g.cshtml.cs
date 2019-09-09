@@ -23,8 +23,13 @@ using NetCoreMvc.Models;
 
 #line default
 #line hidden
+#line 3 "E:\测试项目\NetCoreTest\NetCoreMvc\Views\_ViewImports.cshtml"
+using NetCoreLibrary;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d6a5625cc8fb4476f348b0fe9041c550465d8bf9", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f31ec65f73736565c945b7097e4a894df4514224", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"18778f0619451b9c0f74a21620a92e94214f53d3", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

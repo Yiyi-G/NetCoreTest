@@ -23,8 +23,13 @@ using NetCoreMvc.Models;
 
 #line default
 #line hidden
+#line 3 "E:\测试项目\NetCoreTest\NetCoreMvc\Views\_ViewImports.cshtml"
+using NetCoreLibrary;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"792fd9ec25993cc9da66bac2c742f97855cf864b", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f31ec65f73736565c945b7097e4a894df4514224", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"18778f0619451b9c0f74a21620a92e94214f53d3", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -62,7 +67,7 @@ using NetCoreMvc.Models;
             WriteLiteral("\r\n<div class=\"text-center\">\r\n    <h1 class=\"display-4\">Welcome</h1>\r\n    <p>Learn about ");
             EndContext();
             BeginContext(133, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "792fd9ec25993cc9da66bac2c742f97855cf864b4230", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "792fd9ec25993cc9da66bac2c742f97855cf864b4352", async() => {
                 BeginContext(192, 14, false);
 #line 7 "E:\测试项目\NetCoreTest\NetCoreMvc\Views\Home\Index.cshtml"
                                                                         Write(ViewBag.Titile);

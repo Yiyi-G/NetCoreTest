@@ -1,0 +1,10 @@
+E:\测试项目\NetCoreTest\Tgent.FootChat\obj\Debug\netcoreapp2.2\Tgent.FootChat.csproj.CoreCompileInputs.cache
+E:\测试项目\NetCoreTest\Tgent.FootChat\obj\Debug\netcoreapp2.2\Tgent.FootChat.AssemblyInfoInputs.cache
+E:\测试项目\NetCoreTest\Tgent.FootChat\obj\Debug\netcoreapp2.2\Tgent.FootChat.AssemblyInfo.cs
+E:\测试项目\NetCoreTest\Tgent.FootChat\bin\Debug\netcoreapp2.2\Tgent.FootChat.deps.json
+E:\测试项目\NetCoreTest\Tgent.FootChat\bin\Debug\netcoreapp2.2\Tgent.FootChat.runtimeconfig.json
+E:\测试项目\NetCoreTest\Tgent.FootChat\bin\Debug\netcoreapp2.2\Tgent.FootChat.runtimeconfig.dev.json
+E:\测试项目\NetCoreTest\Tgent.FootChat\bin\Debug\netcoreapp2.2\Tgent.FootChat.dll
+E:\测试项目\NetCoreTest\Tgent.FootChat\bin\Debug\netcoreapp2.2\Tgent.FootChat.pdb
+E:\测试项目\NetCoreTest\Tgent.FootChat\obj\Debug\netcoreapp2.2\Tgent.FootChat.dll
+E:\测试项目\NetCoreTest\Tgent.FootChat\obj\Debug\netcoreapp2.2\Tgent.FootChat.pdb

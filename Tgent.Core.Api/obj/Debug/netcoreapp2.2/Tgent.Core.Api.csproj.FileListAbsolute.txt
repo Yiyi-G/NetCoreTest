@@ -1,0 +1,14 @@
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\Tgent.Core.Api.deps.json
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\Tgent.Core.Api.dll
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\Tgent.Core.Api.pdb
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\NetCore.Commen.dll
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\Tgnet.Core.dll
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\Tgnet.Core.pdb
+E:\测试项目\NetCoreTest\Tgent.Core.Api\bin\Debug\netcoreapp2.2\NetCore.Commen.pdb
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.csprojAssemblyReference.cache
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.csproj.CoreCompileInputs.cache
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.AssemblyInfoInputs.cache
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.AssemblyInfo.cs
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.csproj.CopyComplete
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.dll
+E:\测试项目\NetCoreTest\Tgent.Core.Api\obj\Debug\netcoreapp2.2\Tgent.Core.Api.pdb
