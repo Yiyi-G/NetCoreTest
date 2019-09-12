@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tgnet.ServiceModel;
-using Tgnet.Linq;
-using Tgnet.FootChat.StaticResourceService;
+using StaticResourceService;
 
 namespace Tgnet.FootChat
 {
@@ -20,7 +19,7 @@ namespace Tgnet.FootChat
         LocationAreaInfo GetAreaInfoByAddress(string address, string city);
         AddressWithAreaNo GetAddressWithAreaNo(double longitude, double latitude);
         string GetAreaNo(double longitude, double latitude);
-        Dictionary<string, string[]> GetSubAreaNos(string[] areaNos, Tgnet.FootChat.StaticResourceService.AreaType startAreaType, Tgnet.FootChat.StaticResourceService.AreaType endAreaType);
+        Dictionary<string, string[]> GetSubAreaNos(string[] areaNos, AreaType startAreaType, AreaType endAreaType);
 
         BassClass[] GetBaseClasses(string[] classNos);
         CompleteAreaInfo[] GetCompleteAreaInfos(string[] areaNos);
@@ -36,31 +35,24 @@ namespace Tgnet.FootChat
         {
             _StaticResourceServiceProvider = staticResourceServiceProvider;
         }
-        public Dictionary<string, string> GetBaseClassNames(string[] classNos)
+        public  Dictionary<string, string> GetBaseClassNames(string[] classNos)
         {
             classNos = (classNos ?? Enumerable.Empty<string>()).Where(no => !String.IsNullOrWhiteSpace(no)).Distinct().ToArray();
             if (classNos.Count() == 0) return new Dictionary<string, string>();
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetBaseClassNamesAsync(new Tgnet.Core.Api.OAuth2ClientIdentity(), classNos) ?? new Dictionary<string, string>();
+                var result = provider.Channel.GetBaseClassNamesAsync(new Tgnet.Api.OAuth2ClientIdentity(), classNos).Result;
+                return result ?? new Dictionary<string, string>();
             }
         }
-        public Dictionary<string, string> GetBaseClassNames(string[] classNos)
-        {
-            classNos = (classNos ?? Enumerable.Empty<string>()).Where(no => !String.IsNullOrWhiteSpace(no)).Distinct().ToArray();
-            if (classNos.Count() == 0) return new Dictionary<string, string>();
-            using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
-            {
-                return provider.Channel.GetBaseClassNames(new Api.OAuth2ClientIdentity(), classNos) ?? new Dictionary<string, string>();
-            }
-        }
+       
         public BassClass[] GetBaseClasses(string[] classNos)
         {
             classNos = (classNos ?? Enumerable.Empty<string>()).Where(no => !String.IsNullOrWhiteSpace(no)).Distinct().ToArray();
             if (classNos.Count() == 0) return new BassClass[0];
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetBaseClasses(new Api.OAuth2ClientIdentity(), classNos) ??new BassClass[0];
+                return provider.Channel.GetBaseClassesAsync(new Api.OAuth2ClientIdentity(), classNos).Result ??new BassClass[0];
             }
         }
 
@@ -70,7 +62,7 @@ namespace Tgnet.FootChat
             if (areaNos.Count() == 0) return new Dictionary<string, string>();
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetAreaNames(areaNos);
+                return provider.Channel.GetAreaNamesAsync(areaNos).Result;
             }
         }
         public StaticResourceService.ProductClassInfo[] GetProductClassByNos(string[] classNos)
@@ -79,7 +71,7 @@ namespace Tgnet.FootChat
             if (classNos.Count() == 0) return Enumerable.Empty<StaticResourceService.ProductClassInfo>().ToArray();
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetProductClassByNos(new Api.OAuth2ClientIdentity(), classNos);
+                return provider.Channel.GetProductClassByNosAsync(new Api.OAuth2ClientIdentity(), classNos).Result;
             }
         }
         public AreaInfo GetIPArea(string ip)
@@ -88,7 +80,7 @@ namespace Tgnet.FootChat
                 return null;
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetIPArea(new Api.OAuth2ClientIdentity(), ip);
+                return provider.Channel.GetIPAreaAsync(new Api.OAuth2ClientIdentity(), ip).Result;
             }
         }
 
@@ -99,21 +91,21 @@ namespace Tgnet.FootChat
                 return new Dictionary<string, string[]>();
             using (var provider=_StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetSubAreaNos(new Api.OAuth2ClientIdentity(), areaNos, startAreaType, endAreaType);
+                return provider.Channel.GetSubAreaNosAsync(new Api.OAuth2ClientIdentity(), areaNos, startAreaType, endAreaType).Result;
             }
         }
         public Address GetAddress(double longitude, double latitude)
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetAddress(new Api.OAuth2ClientIdentity(), longitude, latitude);
+                return provider.Channel.GetAddressAsync(new Api.OAuth2ClientIdentity(), longitude, latitude).Result;
             }
         }
         public AddressWithAreaNo GetAddressWithAreaNo(double longitude, double latitude)
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetAddressWithAreaNo(new Api.OAuth2ClientIdentity(), longitude, latitude);
+                return provider.Channel.GetAddressWithAreaNoAsync(new Api.OAuth2ClientIdentity(), longitude, latitude).Result;
             }
         }
         public string GetAreaNo(double longitude, double latitude)
@@ -136,14 +128,14 @@ namespace Tgnet.FootChat
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetSimpleLocation(new Api.OAuth2ClientIdentity(),address,city);
+                return provider.Channel.GetSimpleLocationAsync(new Api.OAuth2ClientIdentity(),address,city).Result;
             }
         }
         public LocationAreaInfo GetAreaInfoByAddress(string address, string city)
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetAreaInfoByAddress(new Api.OAuth2ClientIdentity(), address, city);
+                return provider.Channel.GetAreaInfoByAddressAsync(new Api.OAuth2ClientIdentity(), address, city).Result;
             }
         }
 
@@ -151,35 +143,38 @@ namespace Tgnet.FootChat
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetCompleteAreaInfos(new Api.OAuth2ClientIdentity(), areaNos);
+                return provider.Channel.GetCompleteAreaInfosAsync(new Api.OAuth2ClientIdentity(), areaNos).Result;
             }
         }
         public AreaInfo[] GetAllAreaInfo()
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetAllAreaInfo();
+                return provider.Channel.GetAllAreaInfoAsync().Result;
             }
         }
         public Dictionary<string,string> GetRangeAreas(AreaType startType,AreaType endType)
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-                return provider.Channel.GetRangeAreas(new Api.OAuth2ClientIdentity(),startType,endType);
+                return provider.Channel.GetRangeAreasAsync(new Api.OAuth2ClientIdentity(),startType,endType).Result;
             }
         }
 
         public ShortUrlModel CreateShortUrl(string url)
         {
-            var response = _StaticResourceServiceProvider.Execute(c=>c.CreateShortUrl(new Api.OAuth2ClientIdentity(),url));
-            return response;
+            using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
+            {
+                var response = provider.Channel.CreateShortUrlAsync(new Api.OAuth2ClientIdentity(), url).Result;
+                return response;
+            }
         }
 
         public string GetAreaByAreaName(string province, string city, string town)
         {
             using (var provider = _StaticResourceServiceProvider.NewChannelProvider())
             {
-               var area =  provider.Channel.GetAreaByAreaName(new Api.OAuth2ClientIdentity(), province, city, town);
+               var area =  provider.Channel.GetAreaByAreaNameAsync(new Api.OAuth2ClientIdentity(), province, city, town).Result;
                 return area == null ? "" : area.area_no;
             }
         }

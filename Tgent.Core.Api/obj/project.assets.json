@@ -346,19 +346,6 @@
         "runtime": {
           "bin/placeholder/NetCore.Commen.dll": {}
         }
-      },
-      "Tgnet.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "NetCore.Commen": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Tgnet.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tgnet.Core.dll": {}
-        }
       }
     }
   },
@@ -1018,18 +1005,13 @@
       "type": "project",
       "path": "../NetCore.Commen/NetCore.Commen.csproj",
       "msbuildProject": "../NetCore.Commen/NetCore.Commen.csproj"
-    },
-    "Tgnet.Core/1.0.0": {
-      "type": "project",
-      "path": "../Tgnet.Core/Tgnet.Core.csproj",
-      "msbuildProject": "../Tgnet.Core/Tgnet.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "E:\\测试项目\\NetCoreTest\\Tgnet.Core\\Tgnet.Core.csproj",
       "Microsoft.NETCore.App >= 2.2.0",
-      "NetCore.Commen >= 1.0.0",
-      "Tgnet.Core >= 1.0.0"
+      "NetCore.Commen >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1095,5 +1077,16 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "找不到“E:\\测试项目\\NetCoreTest\\Tgnet.Core\\Tgnet.Core.csproj”的项目信息。在 Visual Studio 中，这可能是因为该项目已被卸载或不属于当前解决方案。否则项目文件可能无效或缺少还原所需的目标。",
+      "libraryId": "E:\\测试项目\\NetCoreTest\\Tgnet.Core\\Tgnet.Core.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }

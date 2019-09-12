@@ -11,9 +11,9 @@ namespace Tgnet.ServiceModel.Behaviors
     /// <summary>
     /// 错误日志记录
     /// </summary>
-    public class LogErrorRecordAttribute : Attribute, IServiceBehavior
+    public class LogErrorRecordAttribute : Attribute//, IServiceBehavior
     {
-        private class LogErrorHandler : IErrorHandler
+        private class LogErrorHandler //: IErrorHandler
         {
             /// <summary>
             /// 节点名称
@@ -53,22 +53,22 @@ namespace Tgnet.ServiceModel.Behaviors
             Keyword = "WcfDefault";
         }
 
-        public void AddBindingParameters(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection<ServiceEndpoint> endpoints, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
-        {
-            return;
-        }
+        //public void AddBindingParameters(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection<ServiceEndpoint> endpoints, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
+        //{
+        //    return;
+        //}
 
-        public void ApplyDispatchBehavior(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase)
-        {
-            foreach (ChannelDispatcher item in serviceHostBase.ChannelDispatchers)
-            {
-                item.ErrorHandlers.Add(new LogErrorHandler(Keyword));
-            }
-        }
+        //public void ApplyDispatchBehavior(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase)
+        //{
+        //    foreach (ChannelDispatcher item in serviceHostBase.ChannelDispatchers)
+        //    {
+        //        item.ErrorHandlers.Add(new LogErrorHandler(Keyword));
+        //    }
+        //}
 
-        public void Validate(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase)
-        {
-            return;
-        }
+        //public void Validate(ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase)
+        //{
+        //    return;
+        //}
     }
 }

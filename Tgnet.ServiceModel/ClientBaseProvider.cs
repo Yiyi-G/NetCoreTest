@@ -34,15 +34,12 @@ namespace Tgnet.ServiceModel
 
         public IChannelProvider<TChannel> NewChannelProvider()
         {
-            if (Endpoint == null)
-            {
-                if (String.IsNullOrWhiteSpace(EndpointConfigurationName))
-                    return new ChannelProvider<TChannel>();
-                else
-                    return new ChannelProvider<TChannel>(EndpointConfigurationName);
-            }
+
+            if (String.IsNullOrWhiteSpace(EndpointConfigurationName))
+                return new ChannelProvider<TChannel>();
             else
-                return new ChannelProvider<TChannel>(Endpoint);
+                return new ChannelProvider<TChannel>(EndpointConfigurationName);
+
         }
     }
 
@@ -52,16 +49,11 @@ namespace Tgnet.ServiceModel
         public bool LogOnFail { get; set; }
 
         public ChannelProvider()
-            : base() 
+            : base()
         {
             LogOnFail = true;
         }
 
-        public ChannelProvider(ServiceEndpoint endpoint)
-            : base(endpoint)
-        {
-            LogOnFail = true;
-        }
 
         public ChannelProvider(string endpointConfigurationName)
             : base(endpointConfigurationName)
@@ -88,15 +80,15 @@ namespace Tgnet.ServiceModel
             {
                 base.Abort();
                 if (LogOnFail)
-                    Log.LoggerResolver.Current.Fail("ChannelProvider", ex);
+                    Tgnet.Log.LoggerResolver.Current.Fail("ChannelProvider", ex);
             }
             catch (CommunicationException ex)
             {
                 base.Abort();
                 if (LogOnFail)
-                    Log.LoggerResolver.Current.Fail("ChannelProvider", ex);
+                    Tgnet.Log.LoggerResolver.Current.Fail("ChannelProvider", ex);
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 base.Abort();
                 throw ex;

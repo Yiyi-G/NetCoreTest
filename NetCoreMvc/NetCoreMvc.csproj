@@ -16,7 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\NetCore.Commen\NetCore.Commen.csproj" />
     <ProjectReference Include="..\NetCoreLibrary\NetCoreLibrary.csproj" />
-    <ProjectReference Include="..\Tgnet.Core\Tgnet.Core.csproj" />
   </ItemGroup>
 
 

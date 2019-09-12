@@ -1,0 +1,31 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.20628.921",
+  "ExtendedData": {
+    "Uri": "net.tcp://api.user.tgnet.com:18065/Services/UserService.svc",
+    "Namespace": "UserService",
+    "SelectedAccessLevelForGeneratedClass": "Public",
+    "GenerateMessageContract": false,
+    "ReuseTypesinReferencedAssemblies": true,
+    "ReuseTypesinAllReferencedAssemblies": false,
+    "CollectionTypeReference": {
+      "Item1": "System.Array",
+      "Item2": "System.Runtime.dll"
+    },
+    "DictionaryCollectionTypeReference": {
+      "Item1": "System.Collections.Generic.Dictionary`2",
+      "Item2": "System.Collections.dll"
+    },
+    "CheckedReferencedAssemblies": [
+      {
+        "Name": "Tgnet"
+      },
+      {
+        "Name": "Tgnet.Api"
+      }
+    ],
+    "InstanceId": null,
+    "Name": "UserService",
+    "Metadata": {}
+  }
+}

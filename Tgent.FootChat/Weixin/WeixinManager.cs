@@ -23,7 +23,7 @@ namespace Tgnet.FootChat.Weixin
         {
             using (var provider = _WeixinServiceProvider.NewChannelProvider())
             {
-                provider.Channel.AccountBinding(new Api.OAuth2ClientIdentity(), app, openId, tgUid);
+              var result = provider.Channel.AccountBindingAsync(new Api.OAuth2ClientIdentity(), app, openId, tgUid,null).Result;
             }
         }
     }

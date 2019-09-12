@@ -1,0 +1,14 @@
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\Tgnet.deps.json
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\Tgnet.dll
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\Tgnet.pdb
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\NetCore.Commen.dll
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Hosting.Abstractions.dll
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\NetCore.Commen.pdb
+E:\测试项目\NetCoreTest\Tgnet\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Hosting.Abstractions.xml
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.csprojAssemblyReference.cache
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.csproj.CoreCompileInputs.cache
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.AssemblyInfoInputs.cache
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.AssemblyInfo.cs
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.csproj.CopyComplete
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.dll
+E:\测试项目\NetCoreTest\Tgnet\obj\Debug\netcoreapp2.2\Tgnet.pdb

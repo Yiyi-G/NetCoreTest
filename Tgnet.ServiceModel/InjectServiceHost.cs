@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 
 namespace Tgnet.ServiceModel
 {
-    public class InjectServiceHost : ServiceHost
-    {
-        private IInjectInstanceProvider m_InjectInstanceProvider;
+    //public class InjectServiceHost : ServiceHost
+    //{
+    //    private IInjectInstanceProvider m_InjectInstanceProvider;
 
-        public InjectServiceHost(IInjectInstanceProvider injectInstanceProvider, Type serviceType, params Uri[] baseAddresses)
-            : base(serviceType, baseAddresses)
-        {
-            m_InjectInstanceProvider = injectInstanceProvider;
-        }
+    //    public InjectServiceHost(IInjectInstanceProvider injectInstanceProvider, Type serviceType, params Uri[] baseAddresses)
+    //        : base(serviceType, baseAddresses)
+    //    {
+    //        m_InjectInstanceProvider = injectInstanceProvider;
+    //    }
 
-        protected override void OnOpening()
-        {
-            base.OnOpening();
-            if (this.Description.Behaviors.Find<InjectServiceBehavior>() == null)
-            {
-                this.Description.Behaviors.Add(new InjectServiceBehavior(m_InjectInstanceProvider));
-            }
-        }
-    }
+    //    protected override void OnOpening()
+    //    {
+    //        base.OnOpening();
+    //        if (this.Description.Behaviors.Find<InjectServiceBehavior>() == null)
+    //        {
+    //            this.Description.Behaviors.Add(new InjectServiceBehavior(m_InjectInstanceProvider));
+    //        }
+    //    }
+    //}
 }

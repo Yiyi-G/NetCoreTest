@@ -4776,19 +4776,6 @@
         "runtime": {
           "bin/placeholder/NetCoreLibrary.dll": {}
         }
-      },
-      "Tgnet.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.2",
-        "dependencies": {
-          "NetCore.Commen": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Tgnet.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tgnet.Core.dll": {}
-        }
       }
     }
   },
@@ -13032,11 +13019,6 @@
       "type": "project",
       "path": "../NetCoreLibrary/NetCoreLibrary.csproj",
       "msbuildProject": "../NetCoreLibrary/NetCoreLibrary.csproj"
-    },
-    "Tgnet.Core/1.0.0": {
-      "type": "project",
-      "path": "../Tgnet.Core/Tgnet.Core.csproj",
-      "msbuildProject": "../Tgnet.Core/Tgnet.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -13046,8 +13028,7 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
       "NetCore.Commen >= 1.0.0",
-      "NetCoreLibrary >= 1.0.0",
-      "Tgnet.Core >= 1.0.0"
+      "NetCoreLibrary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -13086,9 +13067,6 @@
             },
             "E:\\测试项目\\NetCoreTest\\NetCoreLibrary\\NetCoreLibrary.csproj": {
               "projectPath": "E:\\测试项目\\NetCoreTest\\NetCoreLibrary\\NetCoreLibrary.csproj"
-            },
-            "E:\\测试项目\\NetCoreTest\\Tgnet.Core\\Tgnet.Core.csproj": {
-              "projectPath": "E:\\测试项目\\NetCoreTest\\Tgnet.Core\\Tgnet.Core.csproj"
             }
           }
         }

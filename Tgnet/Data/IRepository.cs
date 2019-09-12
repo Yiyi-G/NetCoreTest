@@ -13,17 +13,15 @@ namespace Tgnet.Data
         /// </summary>
         T[] ReadUncommittedEntities<T>(Func<IQueryable<TEntity>, IQueryable<T>> func);
         TEntity Add(TEntity newEntity);
-        IEnumerable<TEntity> AddRange(IEnumerable<TEntity> newEntitys);
+        void AddRange(IEnumerable<TEntity> newEntitys);
         TEntity Delete(TEntity deleteEntity);
-        IEnumerable<TEntity> DeleteRange(IEnumerable<TEntity> deleteEntitys);
-        int Delete(Expression<Func<TEntity, bool>> filter);
+        void DeleteRange(IEnumerable<TEntity> deleteEntitys);
         IQueryable<TEntity> NoTrackingEntities { get; }
         IQueryable<TEntity> NoTrackingEntitiesWith(params string[] includes);
         IQueryable<TEntity> Entities { get; }
         IQueryable<TEntity> EntitiesWith(params string[] includes);
         IQueryable<TEntity> EntitiesWith<TProperty>(params Expression<Func<TEntity, TProperty>>[] includes);
         void SaveChanges();
-        int Update(Expression<Func<TEntity, bool>> filter, Expression<Func<TEntity, TEntity>> update);
         /// <summary>
         /// 如果 filter 能命中则更新，否则创建一条记录并更新。
         /// </summary>

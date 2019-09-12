@@ -10,6 +10,6 @@ namespace Tgnet.ServiceModel
     public interface IInjectInstanceProvider
     {
         void Register(Type contractType, Type serviceType);
-        IInstanceProvider GetInstanceProvider(Type contractType);
+        //IInstanceProvider GetInstanceProvider(Type contractType);
     }
 }

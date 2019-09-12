@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 using System.Text;
-using Tgnet.ServiceModel;
+
 
 namespace Tgnet.ServiceModel.Behaviors
 {
@@ -20,7 +20,7 @@ namespace Tgnet.ServiceModel.Behaviors
 
             public object BeforeCall(string operationName, object[] inputs)
             {
-                Tgnet.Log.StatisticsResolver.Current.IncrementInvoke(OperationContext.Current.GetCurrentIP(), operationName);
+                //Tgnet.Core.Log.StatisticsResolver.Current.IncrementInvoke(OperationContext.Current.GetCurrentIP(), operationName);
                 return null;
             }
         }
@@ -35,7 +35,7 @@ namespace Tgnet.ServiceModel.Behaviors
 
         public void ApplyDispatchBehavior(OperationDescription operationDescription, DispatchOperation dispatchOperation)
         {
-            dispatchOperation.ParameterInspectors.Add(new StatisticsParameterInspector());
+            //dispatchOperation.ParameterInspectors.Add(new StatisticsParameterInspector());
         }
 
         public void Validate(OperationDescription operationDescription)

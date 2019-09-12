@@ -12,9 +12,9 @@ using Tgnet.FootChat.FCRMAPI;
 using Tgnet.FootChat.Mobile;
 using Tgnet.FootChat.Model;
 using Tgnet.FootChat.Models;
-using Tgnet.FootChat.UserService;
 using Tgnet.OAuth2.Common.Client;
 using Tgnet.ServiceModel;
+using UserService;
 
 namespace Tgnet.FootChat.User
 {
@@ -94,13 +94,13 @@ namespace Tgnet.FootChat.User
         /// </summary>
         /// <param name="mobiles"></param>
         /// <returns></returns>
-        Tgnet.FootChat.UserService.UserSimpleInfo[] GetTgUserInfoByMobiles(IEnumerable<string> mobiles);
+        UserSimpleInfo[] GetTgUserInfoByMobiles(IEnumerable<string> mobiles);
         /// <summary>
         /// 获取天工网的用户信息（通过uid）
         /// </summary>
         /// <param name="uids"></param>
         /// <returns></returns>
-        Tgnet.FootChat.UserService.UserSimpleInfo[] GetTgUserInfos(IEnumerable<long> uids);
+        UserSimpleInfo[] GetTgUserInfos(IEnumerable<long> uids);
         IQueryable<Data.FootUser> GetEnableUser();
         StatisticalItem[] TodayUserStatisticalItem(DateTime? time);
         StatisticalItem[] ThisWeekUserStatisticalItem();
@@ -127,7 +127,7 @@ namespace Tgnet.FootChat.User
         /// </summary>
         /// <param name="uid"></param>
         /// <returns></returns>
-        Tgnet.FootChat.UserService.ProductEntity[] GetTgUserProducts(long uid);
+        UserService.ProductEntity[] GetTgUserProducts(long uid);
         /// <summary>
         /// 获取足聊用户业务地区
         /// </summary>
@@ -430,7 +430,7 @@ namespace Tgnet.FootChat.User
             var users = _UserRepository.GetUserInfo(uids);
             return GetDisplayFootPrintUserInfo(users, fuidDic, strategy).ToArray();
         }
-        public Tgnet.FootChat.UserService.UserSimpleInfo[] GetTgUserInfoByMobiles(IEnumerable<string> mobiles)
+        public UserSimpleInfo[] GetTgUserInfoByMobiles(IEnumerable<string> mobiles)
         {
             if (mobiles == null) return new Tgnet.FootChat.UserService.UserSimpleInfo[0];
             mobiles = mobiles.Where(m => StringRule.VerifyMobile(m)).ToArray();
@@ -440,7 +440,7 @@ namespace Tgnet.FootChat.User
                 return provider.Channel.GetUsersSimpleInfoByMobiles(new OAuth2ClientIdentity(), mobiles.ToArray());
             }
         }
-        public Tgnet.FootChat.UserService.UserSimpleInfo[] GetTgUserInfos(IEnumerable<long> uids)
+        public UserSimpleInfo[] GetTgUserInfos(IEnumerable<long> uids)
         {
             if (uids == null) return new Tgnet.FootChat.UserService.UserSimpleInfo[0];
             uids = uids.Where(id => id > 0).ToArray();
@@ -636,7 +636,7 @@ namespace Tgnet.FootChat.User
             _UserRepository.Update(p => p.isVerifiedLocked && System.Data.Entity.DbFunctions.DiffMinutes(p.verifiedlockDate, DateTime.Now) > 30, p => new FootUser { isVerifiedLocked = false, verifiedlockDate = minTime });
 
             //再拿出第一条未审核未锁定的
-            var source = _UserRepository.Entities.AsNoTracking().Where(p => p.isInner == false && p.verifyStatus != VerifyStatus.Unpass && p.isNeedVerify
+            var source = _UserRepository.Entities.Where(p => p.isInner == false && p.verifyStatus != VerifyStatus.Unpass && p.isNeedVerify
               && p.submiVerifytDate.HasValue && p.isVerifiedLocked == false).OrderBy(p => p.created).FirstOrDefault();
 
             if (source != null)
@@ -649,12 +649,12 @@ namespace Tgnet.FootChat.User
 
         public int GetUnverifiedFootUserNum()
         {
-            return _UserRepository.Entities.AsNoTracking().Where(p => p.isInner == false && p.verifyStatus == VerifyStatus.None && p.submiVerifytDate.HasValue).Count();
+            return _UserRepository.Entities.Where(p => p.isInner == false && p.verifyStatus == VerifyStatus.None && p.submiVerifytDate.HasValue).Count();
         }
 
         public IQueryable<FootUser> GetEnableUser()
         {
-            return _UserRepository.Entities.AsNoTracking().Where(p => p.isLocked == false);
+            return _UserRepository.Entities.Where(p => p.isLocked == false);
         }
 
         public StatisticalItem[] TodayUserStatisticalItem(DateTime? time)
@@ -769,13 +769,13 @@ namespace Tgnet.FootChat.User
         public int GetViewFootPrintCount(DateTime date)
         {
             var endTime = date.AddDays(1).Date;
-            return _UserViewFootPrintRecordRepository.Entities.AsNoTracking().Where(p => p.updated < endTime).Select(p => p.count).DefaultIfEmpty().Sum();
+            return _UserViewFootPrintRecordRepository.Entities.Where(p => p.updated < endTime).Select(p => p.count).DefaultIfEmpty().Sum();
         }
 
         public int GetTotalViewUserCount(DateTime date)
         {
             var endTime = date.AddDays(1).Date;
-            return _UserViewFootPrintRecordRepository.Entities.AsNoTracking().Where(p => p.updated < endTime).Select(p => p.uid).Distinct().Count();
+            return _UserViewFootPrintRecordRepository.Entities.Where(p => p.updated < endTime).Select(p => p.uid).Distinct().Count();
         }
 
         public Dictionary<long, DateTime> GetUserExipired(long[] uids)
@@ -789,15 +789,15 @@ namespace Tgnet.FootChat.User
             if (!uids.Any()) return new Dictionary<long, string[]>();
             using (var provider = _UserInfoServiceChannelProvider.NewChannelProvider())
             {
-                return provider.Channel.GetUserBusinessAreas(new OAuth2ClientIdentity(), uids);
+                return provider.Channel.GetUserBusinessAreasAsync(new OAuth2ClientIdentity(), uids).Result;
             }
         }
 
-        public Tgnet.FootChat.UserService.ProductEntity[] GetTgUserProducts(long uid)
+        public ProductEntity[] GetTgUserProducts(long uid)
         {
             using (var provider = _UserManagerServiceChannelProvider.NewChannelProvider())
             {
-                return provider.Channel.GetNewProducts(new OAuth2ClientIdentity(), uid);
+                return provider.Channel.GetNewProductsAsync(new OAuth2ClientIdentity(), uid).Result;
             }
         }
 
@@ -805,7 +805,7 @@ namespace Tgnet.FootChat.User
         {
             uids = (uids ?? new long[0]).Where(p => p > 0).Distinct().ToArray();
             if (!uids.Any()) return new string[0];
-            var result = _UserBusinessAreaRepository.Entities.AsNoTracking().Where(p => uids.Contains(p.uid)).Select(p => p.areaNo).Distinct().ToArray();
+            var result = _UserBusinessAreaRepository.Entities.Where(p => uids.Contains(p.uid)).Select(p => p.areaNo).Distinct().ToArray();
             return result;
         }
 
@@ -813,7 +813,7 @@ namespace Tgnet.FootChat.User
         {
             uids = (uids ?? new long[0]).Where(p => p > 0).Distinct().ToArray();
             if (!uids.Any()) return new Dictionary<long, string[]>();
-            var result = _UserBusinessAreaRepository.Entities.AsNoTracking().Where(p => uids.Contains(p.uid))
+            var result = _UserBusinessAreaRepository.Entities.Where(p => uids.Contains(p.uid))
                 .GroupBy(p => p.uid).ToDictionary(p => p.Key, p => p.Select(d => d.areaNo).ToArray());
             return result;
         }
@@ -822,7 +822,7 @@ namespace Tgnet.FootChat.User
         {
             uids = (uids ?? new long[0]).Where(p => p > 0).Distinct().ToArray();
             if (!uids.Any()) return new Dictionary<long, string>();
-            var result = _UserRepository.Entities.AsNoTracking().Where(p => uids.Contains(p.uid)).GroupBy(p => p.uid).ToDictionary(p => p.Key, p => p.FirstOrDefault().mobile);
+            var result = _UserRepository.Entities.Where(p => uids.Contains(p.uid)).GroupBy(p => p.uid).ToDictionary(p => p.Key, p => p.FirstOrDefault().mobile);
             return result;
         }
 
@@ -849,7 +849,7 @@ namespace Tgnet.FootChat.User
         }
         public IQueryable<FootUser> Entities()
         {
-            return _UserRepository.Entities.AsNoTracking();
+            return _UserRepository.Entities;
         }
 
         public Dictionary<long, string[]> GetUserProducs(long[] uids)
